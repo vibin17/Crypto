@@ -19,16 +19,16 @@ namespace Vigenere
             {
                encrypted.Append(Encrypt(str.Substring(i, 1), key[i % key.Length] - firstLetter, width, firstLetter));
             }
-           
-            Console.WriteLine(encrypted);
+
+            Console.WriteLine($"Зашифрованная строка: {encrypted}");
 
             var decrypted = new StringBuilder();
             for (int i = 0; i < encrypted.Length; i++)
             {
                 decrypted.Append(Encrypt(encrypted.ToString().Substring(i, 1), width - (key[i % key.Length] - firstLetter), width, firstLetter));
             }
-            Console.WriteLine(decrypted);
-           
+            Console.WriteLine($"Расшифрованная строка: {decrypted}");
+
         }
         static string Encrypt(string str, int key, int width, int alphStart)
         {

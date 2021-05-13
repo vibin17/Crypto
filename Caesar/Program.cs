@@ -16,10 +16,10 @@ namespace Caesar
 
             var encrypted = Encrypt(str, k, width, firstLetter);
             
-            Console.WriteLine(encrypted);
+            Console.WriteLine($"Зашифрованная строка: {encrypted}");
 
             var decrypted = Encrypt(encrypted, width - k, width, firstLetter);
-            Console.WriteLine(decrypted);
+            Console.WriteLine($"Расшифрованная строка: {decrypted}");
 
         }
         static string Encrypt(string str, int key, int width, int alphStart)
