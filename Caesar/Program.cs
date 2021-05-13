@@ -22,7 +22,7 @@ namespace Caesar
             Console.WriteLine(decrypted);
 
         }
-        static string Encrypt(string str, int key, int width, int upStart)
+        static string Encrypt(string str, int key, int width, int alphStart)
         {
             var res = new StringBuilder();
             for (int i = 0; i < str.Length; i++)
@@ -31,7 +31,7 @@ namespace Caesar
                     res.Append(' ');
 
                 else
-                    res.Append(Char.ToUpper((char)((str[i] + key) % upStart % width + upStart)));
+                    res.Append(Char.ToUpper((char)((str[i] + key) % alphStart % width + alphStart)));
             }
             return res.ToString();
         }
